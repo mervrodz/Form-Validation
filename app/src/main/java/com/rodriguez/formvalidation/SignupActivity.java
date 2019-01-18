@@ -53,12 +53,13 @@ public class SignupActivity extends AppCompatActivity {
                     etPassword.setError("This field is required");
                     formsuccess--;
                 }
+
                 if (confirmpassword.equals("")) {
                     etConfirmPassword.setError("This field is required");
                     formsuccess--;
                 }
 
-                if (confirmpassword.equals(password)){
+                if (!confirmpassword.equals(password)){
                     etConfirmPassword.setError("Password Mismatch");
                     formsuccess --;
                 }
