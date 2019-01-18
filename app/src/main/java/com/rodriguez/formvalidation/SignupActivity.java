@@ -38,7 +38,7 @@ public class SignupActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.btnSave:
 
-                formsuccess = 4;
+                formsuccess = 5;
 
                 username = etUsername.getText().toString();
                 password = etPassword.getText().toString();
@@ -58,11 +58,15 @@ public class SignupActivity extends AppCompatActivity {
                     formsuccess--;
                 }
 
+                if (confirmpassword.equals(password)){
+                    etConfirmPassword.setError("Password Mismatch");
+                    formsuccess --;
+                }
+
                 if (enterfullname.equals("")) {
                     etEnterFullname.setError("This field is required");
                     formsuccess--;
                 }
-
 
                 Toast.makeText(this, "Validate Form Test", Toast.LENGTH_SHORT).show();
                 break;
